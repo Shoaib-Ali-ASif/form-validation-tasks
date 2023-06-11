@@ -12,14 +12,6 @@ form1Element.addEventListener("submit", function (e) {
 
   number1Element.classList.remove("border");
   number2Element.classList.remove("border");
-
-  if (number1Value == "") {
-    error.innerText = "Enter number 1!";
-    number1Element.classList.add("border");
-  } else if (number2Value == "") {
-    error.innerText = "Enter number 2!";
-    number2Element.classList.add("border");
-  } else {
     if (
       number1Value == 50 ||
       number2Value === 50 ||
@@ -29,12 +21,11 @@ form1Element.addEventListener("submit", function (e) {
     } else {
       error.innerText = "Nothing is equal to 50";
     }
-  }
 });
 const form2Element = document.getElementById("rectangle");
-const submitElement = document.getElementById("submit-1");
+const submit1Element = document.getElementById("submit-1");
 
-submitElement.addEventListener("click", function (e) {
+submit1Element.addEventListener("click", function (e) {
   e.preventDefault();
   const lengthElement = document.getElementById("length");
   const widthElement = document.getElementById("width");
@@ -51,5 +42,26 @@ submitElement.addEventListener("click", function (e) {
     let area = lengthValue * widthValue;
 
     errorElement.innerText = "Area of Rectangle: " + area;
+  }
+});
+const form3Element = document.getElementById("triangle");
+const submit2Element = document.getElementById("submit-2");
+
+submit2Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const heightElement = document.getElementById("height");
+  const baseElement = document.getElementById("base");
+  const error1Element = document.getElementById("error-2");
+
+  let heightValue = parseInt(heightElement.value);
+  let baseValue = parseInt(baseElement.value);
+
+  error1Element.innerText = "";
+  if (isNaN(heightValue) || isNaN(baseValue)) {
+    error1Element.innerText = "Enter a Valid Number";
+  } else {
+    let areaOfTriangle = (heightValue * baseValue) / 2;
+
+    error1Element.innerText = "Area of Triangle: " + areaOfTriangle;
   }
 });
