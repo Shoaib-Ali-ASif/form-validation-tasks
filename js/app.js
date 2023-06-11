@@ -9,15 +9,15 @@ form1Element.addEventListener("submit", function (e) {
   let number2Value = parseInt(number2Element.value);
 
   error.innerText = "";
-    if (
-      number1Value == 50 ||
-      number2Value === 50 ||
-      number1Value + number2Value === 50
-    ) {
-      error.innerText = "Something is equal to 50";
-    } else {
-      error.innerText = "Nothing is equal to 50";
-    }
+  if (
+    number1Value == 50 ||
+    number2Value === 50 ||
+    number1Value + number2Value === 50
+  ) {
+    error.innerText = "Something is equal to 50";
+  } else {
+    error.innerText = "Nothing is equal to 50";
+  }
 });
 const form2Element = document.getElementById("rectangle");
 const submit1Element = document.getElementById("submit-1");
@@ -75,7 +75,7 @@ submit3Element.addEventListener("click", function (e) {
   if (isNaN(radiusValue)) {
     error3Element.innerText = "Enter a Valid Number";
   } else {
-    let areaOfCircle = (radiusValue * radiusValue) * Math.PI ;
+    let areaOfCircle = radiusValue * radiusValue * Math.PI;
 
     error3Element.innerText = "Area of Circle: " + areaOfCircle;
   }
@@ -98,3 +98,19 @@ submit4Element.addEventListener("click", function (e) {
   }
 });
 
+const form6Element = document.getElementById("leapYear");
+const submit5Element = document.getElementById("submit-5");
+submit5Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const yearElement = document.getElementById("year");
+  const error5Element = document.getElementById("error-5");
+
+  let yearValue = parseInt(yearElement.value);
+
+  error5Element.innerText = "";
+  if (yearValue % 4 == 0) {
+    error5Element.innerText = "Leap Year";
+  } else {
+    error5Element.innerText = "Not Leap Year";
+  }
+});
