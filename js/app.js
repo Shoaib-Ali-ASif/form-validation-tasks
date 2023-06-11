@@ -1,9 +1,7 @@
-
-
 const form1Element = document.getElementById("form-sum");
 
 form1Element.addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
   const number1Element = document.getElementById("number_1");
   const number2Element = document.getElementById("number_2");
 
@@ -34,9 +32,10 @@ form1Element.addEventListener("submit", function (e) {
   }
 });
 const form2Element = document.getElementById("rectangle");
+const submitElement = document.getElementById("submit-1");
 
-form2Element.addEventListener("onsubmit", function (calculateArea) {
-    e.preventDefault();
+submitElement.addEventListener("click", function (e) {
+  e.preventDefault();
   const lengthElement = document.getElementById("length");
   const widthElement = document.getElementById("width");
   const errorElement = document.getElementById("error-1");
@@ -45,22 +44,16 @@ form2Element.addEventListener("onsubmit", function (calculateArea) {
   let widthValue = parseInt(widthElement.value);
 
   errorElement.innerText = "";
-  lengthElement.classList.remove("border");
-  widthElement.classList.remove("border");
+  // lengthElement.classList.remove("border");
+  // widthElement.classList.remove("border");
 
-  if (lengthValue == "") {
-    error.innerText = "Enter length!";
-    lengthElement.classList.add("border");
-  } else if (widthValue == "") {
-    error.innerText = "Enter width!";
-    widthElement.classList.add("border");
-  } else{
-    if(
-        isNaN(length) || isNaN(width) 
-    ){
-        errorElement.innerText= "Please enter valid numeric values for length and width.";
-    }
-    let area = length * width ;
-    errorElement.innerText = "the area of rectangle is : " + area ;
+  // if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+  //  errorElement.innerText= "Please enter valid values for length and width.";
+  // } else {
+  if (isNaN(lengthValue) || isNaN(widthValue)) {
+    let area = length * width;
+    // let perimeter = 2 * (length + width);
+
+    errorElement.innerText = "Area: " + area;
   }
 });
