@@ -114,3 +114,20 @@ submit5Element.addEventListener("click", function (e) {
     error5Element.innerText = "Not Leap Year";
   }
 });
+
+const form7Element = document.getElementById("posativeOrNegative");
+const submit6Element = document.getElementById("submit-6");
+submit6Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const num2Element = document.getElementById("num2");
+  const error6Element = document.getElementById("error-6");
+
+  let num2Value = parseInt(num2Element.value);
+
+  error6Element.innerText = "";
+  if ( num2Value >= 0) {
+    error6Element.innerText = "Positive";
+  } else {
+    error6Element.innerText = "Neagtive";
+  }
+});
