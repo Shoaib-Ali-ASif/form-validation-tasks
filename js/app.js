@@ -62,3 +62,22 @@ submit2Element.addEventListener("click", function (e) {
     error1Element.innerText = "Area of Triangle: " + areaOfTriangle;
   }
 });
+const form4Element = document.getElementById("circel");
+const submit3Element = document.getElementById("submit-3");
+submit3Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const radiusElement = document.getElementById("radius");
+  const error3Element = document.getElementById("error-3");
+
+  let radiusValue = parseInt(radiusElement.value);
+
+  error3Element.innerText = "";
+  if (isNaN(radiusValue)) {
+    error3Element.innerText = "Enter a Valid Number";
+  } else {
+    let areaOfCircle = (radiusValue * radiusValue) * Math.PI ;
+
+    error3Element.innerText = "Area of Circle: " + areaOfCircle;
+  }
+});
+
