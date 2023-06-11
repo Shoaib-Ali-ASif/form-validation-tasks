@@ -131,3 +131,19 @@ submit6Element.addEventListener("click", function (e) {
     error6Element.innerText = "Neagtive";
   }
 });
+const form8Element = document.getElementById("multiple");
+const submit7Element = document.getElementById("submit-7");
+submit7Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const num3Element = document.getElementById("num3");
+  const error7Element = document.getElementById("error-7");
+
+  let num3Value = parseInt(num3Element.value);
+
+  error7Element.innerText = "";
+  if ( num3Value % 3 == 0) {
+    error7Element.innerText = "Multple of 3";
+  } else {
+    error7Element.innerText = "Not multiple of 3";
+  }
+});
