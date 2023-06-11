@@ -9,9 +9,6 @@ form1Element.addEventListener("submit", function (e) {
   let number2Value = parseInt(number2Element.value);
 
   error.innerText = "";
-
-  number1Element.classList.remove("border");
-  number2Element.classList.remove("border");
     if (
       number1Value == 50 ||
       number2Value === 50 ||
