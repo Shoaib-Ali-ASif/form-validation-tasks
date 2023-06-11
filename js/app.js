@@ -91,7 +91,9 @@ submit4Element.addEventListener("click", function (e) {
   let numValue = parseInt(numElement.value);
 
   error4Element.innerText = "";
-  if (numValue % 2 == 0) {
+  if (isNaN(numValue)) {
+    error4Element.innerText = "Enter a Valid Number";
+  }else if (numValue % 2 == 0) {
     error4Element.innerText = "even";
   } else {
     error4Element.innerText = "odd";
@@ -108,7 +110,9 @@ submit5Element.addEventListener("click", function (e) {
   let yearValue = parseInt(yearElement.value);
 
   error5Element.innerText = "";
-  if (yearValue % 4 == 0) {
+  if (isNaN(yearValue)) {
+    error5Element.innerText = "Enter a Valid Number";
+  }else if (yearValue % 4 == 0) {
     error5Element.innerText = "Leap Year";
   } else {
     error5Element.innerText = "Not Leap Year";
@@ -125,7 +129,9 @@ submit6Element.addEventListener("click", function (e) {
   let num2Value = parseInt(num2Element.value);
 
   error6Element.innerText = "";
-  if ( num2Value >= 0) {
+  if (isNaN(num2Value)) {
+    error6Element.innerText = "Enter a Valid Number";
+  }else if (num2Value >= 0) {
     error6Element.innerText = "Positive";
   } else {
     error6Element.innerText = "Neagtive";
@@ -141,7 +147,9 @@ submit7Element.addEventListener("click", function (e) {
   let num3Value = parseInt(num3Element.value);
 
   error7Element.innerText = "";
-  if ( num3Value % 3 == 0) {
+  if (isNaN(num3Value)) {
+    error7Element.innerText = "Enter a Valid Number";
+  }else if (num3Value % 3 == 0) {
     error7Element.innerText = "Multple of 3";
   } else {
     error7Element.innerText = "Not multiple of 3";
