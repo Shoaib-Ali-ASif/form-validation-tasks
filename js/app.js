@@ -44,16 +44,12 @@ submitElement.addEventListener("click", function (e) {
   let widthValue = parseInt(widthElement.value);
 
   errorElement.innerText = "";
-  // lengthElement.classList.remove("border");
-  // widthElement.classList.remove("border");
 
-  // if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
-  //  errorElement.innerText= "Please enter valid values for length and width.";
-  // } else {
   if (isNaN(lengthValue) || isNaN(widthValue)) {
-    let area = length * width;
-    // let perimeter = 2 * (length + width);
+    errorElement.innerText = "Enter a Valid Number";
+  } else {
+    let area = lengthValue * widthValue;
 
-    errorElement.innerText = "Area: " + area;
+    errorElement.innerText = "Area of Rectangle: " + area;
   }
 });
