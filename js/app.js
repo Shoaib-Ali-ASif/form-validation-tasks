@@ -93,7 +93,7 @@ submit4Element.addEventListener("click", function (e) {
   error4Element.innerText = "";
   if (isNaN(numValue)) {
     error4Element.innerText = "Enter a Valid Number";
-  }else if (numValue % 2 == 0) {
+  } else if (numValue % 2 == 0) {
     error4Element.innerText = "even";
   } else {
     error4Element.innerText = "odd";
@@ -112,7 +112,7 @@ submit5Element.addEventListener("click", function (e) {
   error5Element.innerText = "";
   if (isNaN(yearValue)) {
     error5Element.innerText = "Enter a Valid Number";
-  }else if (yearValue % 4 == 0) {
+  } else if (yearValue % 4 == 0) {
     error5Element.innerText = "Leap Year";
   } else {
     error5Element.innerText = "Not Leap Year";
@@ -131,7 +131,7 @@ submit6Element.addEventListener("click", function (e) {
   error6Element.innerText = "";
   if (isNaN(num2Value)) {
     error6Element.innerText = "Enter a Valid Number";
-  }else if (num2Value >= 0) {
+  } else if (num2Value >= 0) {
     error6Element.innerText = "Positive";
   } else {
     error6Element.innerText = "Neagtive";
@@ -149,9 +149,45 @@ submit7Element.addEventListener("click", function (e) {
   error7Element.innerText = "";
   if (isNaN(num3Value)) {
     error7Element.innerText = "Enter a Valid Number";
-  }else if (num3Value % 3 == 0) {
+  } else if (num3Value % 3 == 0) {
     error7Element.innerText = "Multple of 3";
   } else {
     error7Element.innerText = "Not multiple of 3";
+  }
+});
+
+const form9Element = document.getElementById("celsiusToFahrenheit");
+const submit8Element = document.getElementById("submit-8");
+submit8Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const celsiusElement = document.getElementById("celsius");
+  const error8Element = document.getElementById("error-8");
+
+  let celsiusValue = parseInt(celsiusElement.value);
+
+  error8Element.innerText = "";
+  if (isNaN(celsiusValue)) {
+    error8Element.innerText = "Enter a Valid Number";
+  } else {
+    let celciusToFahrenheit = celsiusValue * 1.8 + 32;
+    error8Element.innerText = "celciusToFahrenheit: " + celciusToFahrenheit;
+  }
+});
+
+const form10Element = document.getElementById("fahrenheitToCelsius");
+const submit9Element = document.getElementById("submit-9");
+submit9Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const fahrenheitElement = document.getElementById("fahrenheit");
+  const error9Element = document.getElementById("error-9");
+
+  let fahrenheitValue = parseInt(fahrenheitElement.value);
+
+  error9Element.innerText = "";
+  if (isNaN(fahrenheitValue)) {
+    error9Element.innerText = "Enter a Valid Number";
+  } else {
+    let fahrenheitToCelsius = fahrenheitValue - 32 * 1.8;
+    error9Element.innerText = "fahrenheit to celsius: " + fahrenheitToCelsius;
   }
 });
