@@ -81,3 +81,20 @@ submit3Element.addEventListener("click", function (e) {
   }
 });
 
+const form5Element = document.getElementById("evenOrOdd");
+const submit4Element = document.getElementById("submit-4");
+submit4Element.addEventListener("click", function (e) {
+  e.preventDefault();
+  const numElement = document.getElementById("num");
+  const error4Element = document.getElementById("error-4");
+
+  let numValue = parseInt(numElement.value);
+
+  error4Element.innerText = "";
+  if (numValue % 2 == 0) {
+    error4Element.innerText = "even";
+  } else {
+    error4Element.innerText = "odd";
+  }
+});
+
